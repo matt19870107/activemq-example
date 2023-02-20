@@ -28,7 +28,7 @@ public class AsyncProvider {
         Connection connection = activeMQConnectionFactory.createConnection();
         connection.start();
         // 3.创建会话，第一个参数为是否开启事务，第二个参数为签收
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
         // 4.创建目的地（队列或者主题）
         Queue queue = session.createQueue(QUEUE_NAME);
         // 可以用父接口Destination接受
@@ -63,6 +63,7 @@ public class AsyncProvider {
                 }
             });
         }
+        session.commit();
         System.out.println("finish send message");
         // 9.关闭资源
         activeMQMessageProducer.close();

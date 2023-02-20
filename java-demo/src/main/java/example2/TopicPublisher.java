@@ -24,7 +24,7 @@ public class TopicPublisher {
         // Destination topic = session.createQueue(TOPIC_NAME);
         // 5.创建消息的生产者
         MessageProducer producer = session.createProducer(topic);
-        // 6.通过消息生产者生产6条消息发送MQ队列
+        // 6.通过消息生产者生产3条消息发送MQ队列
         for (int i = 0; i < 3; i++) {
             // 7.创建消息
             TextMessage textMessage = session.createTextMessage("msg" + i + ":hello world");

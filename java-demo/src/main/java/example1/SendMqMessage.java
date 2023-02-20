@@ -14,7 +14,7 @@ public class SendMqMessage {
         Destination destination = session.createQueue("example1-queue");
 
         MessageProducer producer = session.createProducer(destination);
-        producer.setTimeToLive(60000);
+        producer.setTimeToLive(600000);
         for(int i = 0; i<3; i++) {
             TextMessage message = session.createTextMessage("message-" + i);
 
