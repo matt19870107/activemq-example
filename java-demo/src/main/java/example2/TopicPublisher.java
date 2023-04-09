@@ -17,11 +17,9 @@ public class TopicPublisher {
         Connection connection = activeMQConnectionFactory.createConnection();
         connection.start();
         // 3.创建会话，第一个参数为是否开启事务，第二个参数为签收
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
         // 4.创建目的地（队列或者主题）
         Topic topic = session.createTopic(TOPIC_NAME);
-        // 可以用父接口Destination接受
-        // Destination topic = session.createQueue(TOPIC_NAME);
         // 5.创建消息的生产者
         MessageProducer producer = session.createProducer(topic);
         // 6.通过消息生产者生产3条消息发送MQ队列
@@ -29,7 +27,6 @@ public class TopicPublisher {
             // 7.创建消息
             TextMessage textMessage = session.createTextMessage("msg" + i + ":hello world");
             // 8.将消息发送到MQ
-            producer.setTimeToLive(1000);
             producer.send(textMessage);
         }
         // 9.关闭资源

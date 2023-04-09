@@ -22,9 +22,8 @@ public class MqMessageReceiverWithException {
             if (message != null) {
                 String text = message.getText();
                 System.out.println("consumer received:" + text);
-                message.acknowledge();
                 i ++;
-                if (i == 1) {
+                if (i == 2) {
                     throw new JMSException("exception");
                 }
                 session.commit();

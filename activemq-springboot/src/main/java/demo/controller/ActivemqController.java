@@ -21,16 +21,18 @@ public class ActivemqController {
     private JmsMessagingTemplate jmsMessagingTemplate;
 
     @RequestMapping("send/queue")
-    public void sendQueue(String name) {
+    public String sendQueue(String name) {
         //方法一：添加消息到消息队列
         jmsMessagingTemplate.convertAndSend(queue, name);
         //方法二：这种方式不需要手动创建queue，系统会自行创建名为test的队列
         //jmsMessagingTemplate.convertAndSend("test", name);
+        return "Done!";
     }
 
     @RequestMapping("send/sub")
-    public void sendSub(String name) {
+    public String sendSub(String name) {
         //方法一：添加消息到消息队列
         jmsMessagingTemplate.convertAndSend(topic, name);
+        return "Done!";
     }
 }

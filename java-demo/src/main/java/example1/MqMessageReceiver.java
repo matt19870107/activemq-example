@@ -20,7 +20,6 @@ public class MqMessageReceiver {
             if (message != null) {
                 String text = message.getText();
                 System.out.println("consumer received:" + text);
-                message.acknowledge();
                 session.commit();
             } else {
                 break;
