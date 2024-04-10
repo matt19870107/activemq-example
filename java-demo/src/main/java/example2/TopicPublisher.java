@@ -2,7 +2,7 @@ package example2;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.*;
+import jakarta.jms.*;
 
 public class TopicPublisher {
     // ActiveMQ服务地址

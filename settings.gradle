@@ -1,4 +1,4 @@
-rootProject.name = 'com.activemq'
+rootProject.name = 'activemq-example'
 include 'activemq-springboot'
 include 'java-demo'
 

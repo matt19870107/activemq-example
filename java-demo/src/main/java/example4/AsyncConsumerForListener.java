@@ -2,7 +2,7 @@ package example4;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.*;
+import jakarta.jms.*;
 
 public class AsyncConsumerForListener {
     // ActiveMQ服务地址
@@ -17,7 +17,7 @@ public class AsyncConsumerForListener {
         Connection connection = activeMQConnectionFactory.createConnection();
         connection.start();
         // 3.创建会话，第一个参数为是否开启事务，第二个参数为签收
-        Session session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
         // 4.创建目的地（队列或者主题）
         Queue queue = session.createQueue(QUEUE_NAME);
         // 5.创建消费者

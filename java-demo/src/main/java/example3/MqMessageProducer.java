@@ -2,7 +2,7 @@ package example3;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.*;
+import jakarta.jms.*;
 
 public class MqMessageProducer {
     public static void main (String args[]) throws JMSException, InterruptedException {
