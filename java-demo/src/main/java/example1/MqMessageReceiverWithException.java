@@ -17,7 +17,7 @@ public class MqMessageReceiverWithException {
 
         int i = 0;
 
-        while (true) {
+        while (i!=3) {
             TextMessage message = (TextMessage) consumer.receive();
             if (message != null) {
                 String text = message.getText();
@@ -31,6 +31,7 @@ public class MqMessageReceiverWithException {
                 break;
             }
         }
+        
         consumer.close();
         session.close();
         connection.close();
