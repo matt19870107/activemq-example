@@ -11,6 +11,5 @@ repositories {
 
 dependencies {
     implementation group: 'org.apache.activemq', name: 'activemq-all', version: '6.1.1'
-    implementation group: 'org.apache.xbean', name: 'xbean-spring', version: '4.24'
-    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.23.1'
 }

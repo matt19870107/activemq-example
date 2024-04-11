@@ -22,7 +22,7 @@ public class SendMqMessage {
             producer.send(message);
         }
 
-        session.commit();;
+        session.commit();
         session.close();
         connection.close();
     }
