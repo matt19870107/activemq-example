@@ -43,7 +43,7 @@ public class AsyncConsumerForListener {
         });
         System.out.println("finish on message listen ");
 
-        //Thread.sleep(60000);
+        Thread.sleep(60000);
         consumer.close();
         session.close();
         connection.close();
