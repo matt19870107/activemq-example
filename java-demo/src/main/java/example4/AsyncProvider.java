@@ -17,7 +17,7 @@ public class AsyncProvider {
     // ActiveMQ服务地址
     public static final String ACTIVEMQ_URL = "tcp://127.0.0.1:61616";
     // 消息队列名称，取消息必须和存消息的队列名称一致
-    public static final String QUEUE_NAME = "example3-queue";
+    public static final String QUEUE_NAME = "example4-queue";
 
     public static void main(String[] args) throws Exception {
         // 1.创建给定ActiveMQ服务连接工厂，使用默认的用户名和密码
